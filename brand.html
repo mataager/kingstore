@@ -30,13 +30,18 @@
 </div>
 <article>
     <header class="header" data-header="">
+
         <div class="header__bar" id="store-hints"></div>
+
+
         <div class="container">
 
             <div class="overlay" data-overlay=""></div>
 
             <a href="./index.html" class="logo">
-                <img src="./assets/images/iicon.svg" width="160" height="50" alt="">
+                <a href="./index.html" class="logo store-name ">
+                    King Store
+                </a>
             </a>
 
             <button class="nav-open-btn" data-nav-open-btn="" aria-label="Open Menu">
@@ -50,7 +55,9 @@
                 </button>
 
                 <a href="#" class="logo bg-white">
-                    <img src="./assets/images/iicon.svg" width="190" height="50" alt="">
+                    <a href="./index.html" class="logo store-name ">
+                        King Store
+                    </a>
                 </a>
 
                 <ul class="navbar-list">
@@ -58,9 +65,11 @@
                     <li class="navbar-item">
                         <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Home</a>
                     </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Shop</a>
+                    </li>
 
                     <!-- /mega menus & brands menu/ -->
-
                     <li class="navbar-item" id="megamenu" data-mega-menu>
                         <div class="flex align-items justify-content-space-between">
                             <a href="#" class="navbar-link" onclick="changeFrameSrc('Products.html')">Products</a>
@@ -98,8 +107,6 @@
                 <ul class="nav-action-list">
 
                     <li class="li-action" id="search-li">
-
-
                     </li>
                     <li class="navbar-item li-action">
                         <button class="nav-action-btn" onclick="changeFrameSrc('Cart.html')">
@@ -109,6 +116,7 @@
                             <data id="cartItemCount" class="nav-action-badge" aria-hidden="true">0</data>
                         </button>
                     </li>
+
                     <li class="navbar-item li-action">
                         <button class="nav-action-btn" onclick="changeFrameSrc('account.html')">
                             <ion-icon name="person-outline"></ion-icon>

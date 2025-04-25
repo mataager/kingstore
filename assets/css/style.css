@@ -340,7 +340,7 @@ body {
   z-index: 5;
   position: relative;
   box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.07);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 0 0 20px 0;
   border: 1px solid #ffd70038;
   display: flex;
@@ -377,7 +377,6 @@ body {
 }
 
 .card-banner img {
-  border-radius: 9px 9px 0px 0px;
   width: 100%;
   /* height: 100%; */
   object-fit: contain;
@@ -441,7 +440,7 @@ body {
   font-family: var(--ff-roboto);
   font-size: var(--fs-7);
   z-index: 100;
-  border-radius: 10px 0px 5px 0px;
+  /* border-radius: 10px 0px 5px 0px; */
 }
 
 
@@ -735,6 +734,7 @@ body {
 }
 
 .navbar .logo {
+  display: none;
   background: #000;
   padding-block: 50px 40px;
 }
@@ -813,10 +813,11 @@ body {
 
 .nav-action-text strong {
   font-weight: initial;
-  color: black;
+  color: #f1f1f1;
 }
 
 .cart-amount {
+  /* color: aliceblue; */
   font-weight: 500 !important;
   font-size: small;
 }
@@ -825,8 +826,8 @@ body {
   border: 2px solid gold;
   margin-left: auto;
   font-size: var(--fs-8);
-  background: #f1f1f1;
-  color: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  color: #f1f1f1;
   width: 18px;
   height: 18px;
   display: grid;
@@ -1167,6 +1168,8 @@ body {
 }
 
 .footer-list-title {
+  width: fit-content;
+  border-bottom: 1px solid gold;
   position: relative;
   color: #ffffffcc;
   font-family: var(--ff-josefin-sans);
@@ -1194,7 +1197,7 @@ body {
 }
 
 a.footer-link:is(:hover, :focus) {
-  color: var(--bittersweet);
+  color: #838383;
 }
 
 .footer-link-text {
@@ -1878,8 +1881,7 @@ a.footer-link:is(:hover, :focus) {
   }
 
   .card-action-btn {
-    background: var(--white);
-    color: var(--rich-black-fogra-29);
+    color: #f1f1f1;
     font-size: 10px;
     padding: 7px;
     border-radius: 50%;
@@ -2537,7 +2539,7 @@ select {
 
 /* Style for the size radio buttons */
 .size-radio {
-  color: #ffffff;
+  color: #ffffff !important;
   display: inline-block;
   padding: 8px;
   margin: 5px;
@@ -3635,15 +3637,15 @@ a {
 }
 
 #search-input {
-  background: white;
+  background: rgb(0, 0, 0);
   width: 100%;
   padding: 12px 50px 12px 20px;
   font-size: 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 30px;
+  border: 1px solid #ffd700;
   transition: all 0.3s ease;
   box-sizing: border-box;
   height: 50px;
+  color: aliceblue;
 }
 
 #search-input:focus {
@@ -4105,7 +4107,12 @@ a {
   background-color: black !important;
 }
 
+.swal2-popup {
+  background: #000 !important;
+  color: white !important;
 
+
+}
 
 .user-info {
   margin-top: 20px;
@@ -4149,7 +4156,7 @@ a {
   background-color: #000000;
   border-radius: 10px;
   color: white;
-  border: 2px solid #000000;
+  border: 1px solid white;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -4564,6 +4571,7 @@ a {
 
 /* // */
 .user-dashboard {
+  border: 1px solid white;
   width: 90%;
   max-width: 1200px;
   margin: 20px auto;
@@ -4624,16 +4632,18 @@ a {
   text-align: center;
   padding: 20px;
   cursor: pointer;
-  background: #f4f4f4;
+  background: rgb(204, 204, 204);
   transition: background 0.3s;
 }
 
 .nav-tab:hover,
 .nav-tab.active {
-  background: white;
+  background: #838383;
 }
 
 .content-section {
+  color: aliceblue;
+  background: rgb(0, 0, 0);
   padding: 20px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -4675,7 +4685,7 @@ th {
 }
 
 .order-card {
-  background: #ffffff;
+  background: rgb(0, 0, 0);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -4695,7 +4705,7 @@ th {
 .order-card .order-header h5 {
   margin: 0;
   font-size: small;
-  color: #333;
+  color: #f1f1f1;
 }
 
 .order-card .order-header .status {
@@ -4793,6 +4803,7 @@ th {
 }
 
 #search-order {
+  color: white;
   width: 100%;
   padding: 10px;
   font-size: 1rem;
@@ -4840,13 +4851,12 @@ th {
 
 
 .account-section {
-  margin-bottom: 20px;
+  color: white;
   border-radius: 10px;
   border: 0.5px solid #e7e7e7;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(231, 231, 231, 0.692);
-  /* Soft shadow with #e7e7e7 */
 
+  /* Soft shadow with #e7e7e7 */
 }
 
 .account-section {
@@ -4856,6 +4866,7 @@ th {
 }
 
 .details-row {
+  color: aliceblue;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -4864,13 +4875,14 @@ th {
 }
 
 .detail-group {
+  /* color: crimson; */
   flex: 1;
   padding: 0 10px 10px;
 }
 
 .detail-group h6 {
   font-size: 14px;
-  color: #555;
+  color: #f1f1f1;
   margin-bottom: 5px;
   font-weight: normal;
 }
@@ -4878,14 +4890,14 @@ th {
 .detail-group p {
   font-size: 12px;
   font-weight: bold;
-  color: #333;
+  color: #f0f0f0;
 }
 
 
 
 .edit-button {
   padding: 8px 16px;
-  color: #333;
+  color: #f1f1f1;
   border: 1px solid #ededed;
   border-radius: 5px;
   cursor: pointer;
@@ -4925,8 +4937,18 @@ th {
   font-size: smaller;
 }
 
+#signin-link,
+#signup-link {
+  color: #aeaeae;
+  font-size: x-small;
+  margin-top: 19px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-
+.footer-end>.footer-list:nth-child(2) {
+  display: none;
+}
 
 /* account setting */
 /* Styling for inputs, select, and textarea */
@@ -4976,6 +4998,7 @@ th {
 
 /* Dropdown arrow customization */
 .select-governorate {
+  background: #333 !important;
   appearance: none;
   /* Removes default arrow styling */
   background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23000000"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>') no-repeat right 12px center;
@@ -5011,7 +5034,7 @@ th {
 
 
 .address-card {
-  background: white;
+  background: #333;
   cursor: pointer;
   border: 2px solid #efefef;
   overflow: hidden;
@@ -5188,6 +5211,7 @@ th {
 /* // */
 
 .order-item {
+  color: aliceblue;
   position: relative;
 }
 
@@ -5439,7 +5463,6 @@ th {
 
 .best-seller {
   z-index: 100;
-  border-radius: 0px 10px 0px 5px;
   right: 0px;
   font-size: small;
   color: white;
@@ -6427,7 +6450,7 @@ body.modal-open #mainpagearea {
   font-size: small;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #19191a;
+  color: #f1f1f1;
   padding-block: 10px;
   /* position: relative; */
   /* transition: all 0.3s ease; */
@@ -6489,6 +6512,7 @@ body.modal-open #mainpagearea {
 /* // */
 
 .promo-code-input {
+  color: aliceblue;
   padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -6560,6 +6584,7 @@ body.modal-open #mainpagearea {
 }
 
 .promo-code-section-div {
+  /* display: none !important; */
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
@@ -6665,7 +6690,7 @@ body.modal-open::after {
   font-size: 25px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #19191a;
+  color: #f1f1f1;
 }
 
 .guestmodalarea p {
@@ -6673,7 +6698,7 @@ body.modal-open::after {
   font-size: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #19191a;
+  color: #f1f1f1;
   margin-top: 30px;
 }
 
@@ -6690,7 +6715,7 @@ body.modal-open::after {
   color: white;
   background: black;
   padding: 6px 20px;
-  border: 1px solid transparent;
+  border: 1px solid #f1f1f1;
   border-radius: 4px;
   cursor: pointer;
   transition: var(--transition-1);
@@ -6704,8 +6729,8 @@ body.modal-open::after {
 }
 
 .continueasguest {
-  color: black;
-  border: 1px solid black;
+  color: #f1f1f1;
+  border: 1px solid #f1f1f1;
   padding: 15px 60px;
   border-radius: 4px;
   cursor: pointer;
@@ -6795,6 +6820,7 @@ body.modal-open::after {
 
 /* // */
 .signinupbtn04392 {
+  border: 1px solid white;
   font-size: x-small;
   color: #ffffff;
   padding: 8px 30px;
