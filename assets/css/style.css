@@ -1288,7 +1288,7 @@ a.footer-link:is(:hover, :focus) {
   font-size: 20px;
   padding: 10px;
   border: 1px solid #ffd700;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-1);
@@ -1548,7 +1548,7 @@ a.footer-link:is(:hover, :focus) {
    */
 
   .go-top-btn {
-    padding: 10px;
+    padding: 5px;
     border-width: 2px;
     /* bottom: 40px; */
     right: 30px;
@@ -3520,9 +3520,20 @@ a {
   /* background: linear-gradient(90deg, #000000, #2d3436, #000000); */
   color: #f1f1f1;
   font-family: 'Josefin Sans';
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.thumbnail {
+  pointer-events: auto !important;
+  /* Forces override */
 }
 
 /* // */

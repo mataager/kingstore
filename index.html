@@ -42,11 +42,11 @@
 
             <div class="overlay" data-overlay=""></div>
 
-            <a href="./index.html" class="logo">
-                <a href="./index.html" class="logo store-name ">
-                    King Store
-                </a>
+
+            <a href="./index.html" class="logo store-name ">
+                King Store
             </a>
+
 
             <button class="nav-open-btn" data-nav-open-btn="" aria-label="Open Menu">
                 <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
@@ -152,177 +152,395 @@
 
 
 
-            <section class="section king-hero" id="panner-img">
-                <!-- Black & Gold Overlay -->
-                <div class="king-overlay"></div>
+            <section class="drip-hero" id="panner-img">
+                <div class="drip-pattern"></div>
 
                 <div class="container">
-                    <!-- Crown Logo (Optional) -->
-                    <div class="king-crown">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#ffd700">
-                            <path d="M5 16L3 6l6 2 2-6 2 6 6-2-2 10H5m14 4H5v2h14v-2z"></path>
-                        </svg>
-                    </div>
 
-                    <!-- Headline - Command Respect -->
-                    <h1 class="king-headline">
-                        <span class="king-word">WEAR</span>
-                        <span class="king-word">THE</span>
-                        <span class="king-word">CROWN</span>
+                    <h1 class="drip-headline">
+                        <span class="drip-word">DRIP</span>
+                        <span class="drip-word">WEAR</span>
+
                     </h1>
 
-                    <!-- Subheading - Cold & Luxurious -->
-                    <p class="king-subtitle">
-                        KING STORE isn’t fashion—it’s <strong>armor</strong>.
+                    <!-- Subheading with Refined Typography -->
+                    <p class="drip-subtitle">
+                        Where streetwear meets <strong>haute couture</strong>.
                         <br>
-                        Crafted for those who <strong>rule</strong>, not follow.
+                        For those who command attention without saying a word.
                     </p>
 
-                    <!-- CTA Buttons - Gold Accent -->
-                    <div class="king-cta">
-                        <a href="./Products.html" class="king-btn">
-                            SHOP THE THRONE
-                            <span class="king-arrow">→</span>
+                    <!-- Luxury CTA Buttons -->
+                    <div class="drip-cta">
+                        <a href="./Products.html" class="drip-btn drip-btn-primary">
+                            EXPLORE COLLECTION
+                            <span class="drip-arrow">→</span>
                         </a>
-                        <a href="./sale.html" class="king-btn-secondary">
-                            BOW TO SALE
+                        <a href="./sale.html" class="drip-btn drip-btn-secondary">
+                            SALE
                         </a>
                     </div>
                 </div>
             </section>
+
             <style>
-                /* === KING STORE HERO - DARK LUXURY === */
-                .king-hero {
-                    background: #000;
-                    position: relative;
-                    overflow: hidden;
-                    padding: 100px 0;
-                    text-align: center;
-                    border-bottom: 3px solid #ffd700;
+                /* Ensure animations run */
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
                 }
 
-                .king-overlay {
+                @keyframes slideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                /* Headline animation */
+                .drip-headline {
+                    opacity: 0;
+                    /* Start invisible */
+                    animation: fadeIn 1s ease-out 0.5s forwards;
+                }
+
+                .drip-word {
+                    display: inline-block;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .drip-word:nth-child(1) {
+                    animation: slideUp 0.8s ease-out 0.8s forwards;
+                }
+
+                .drip-word:nth-child(2) {
+                    animation: slideUp 0.8s ease-out 1s forwards;
+                }
+
+                .drip-word:nth-child(3) {
+                    animation: slideUp 0.8s ease-out 1.2s forwards;
+                    color: var(--drip-gold);
+                }
+
+                :root {
+                    --drip-gold: #D4AF37;
+                    /* More elegant gold */
+                    --drip-black: #0A0A0A;
+                    --drip-ice: #F8F8F8;
+                    /* Pure white */
+                    --drip-diamond: #E5F9FF;
+                    --drip-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+                }
+
+                /* Base Styles */
+                .drip-hero {
+                    font-family: 'Josefin Sans';
+                    position: relative;
+                    height: 70vh;
+                    min-height: 400px;
+                    background-size: cover;
+                    background-position: center 30%;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                }
+
+                /* Luxury Overlays */
+
+
+                .drip-pattern {
                     position: absolute;
-                    top: 0;
-                    left: 0;
                     width: 100%;
                     height: 100%;
-                    background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 1) 100%);
+                    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+                    opacity: 0.3;
                     z-index: 1;
                 }
 
-                .king-crown {
-                    margin-bottom: 20px;
-                    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+                /* Container */
+                .container {
+                    position: relative;
+                    z-index: 3;
+                    width: 90%;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding-top: 5%;
                 }
 
-                .king-headline {
-                    font-family: 'Playfair Display', serif;
-                    font-size: 5rem;
-                    font-weight: 700;
-                    color: #fff;
-                    text-transform: uppercase;
-                    letter-spacing: 5px;
-                    margin: 0;
+                /* Diamond Logo Animation */
+
+
+                .diamond-shine {
+                    width: 80px;
+                    height: 80px;
+                    fill: var(--drip-gold);
+                    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+                }
+
+
+
+                /* Headline with Elegant Typography */
+                .drip-headline {
+                    font-size: clamp(2.5rem, 8vw, 6.5rem);
+                    color: var(--drip-ice);
+                    margin-bottom: 2rem;
                     line-height: 1.1;
-                    z-index: 2;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    text-shadow: var(--drip-shadow);
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                .drip-word {
+                    display: inline-block;
+                    margin: 0 0.25rem;
                     position: relative;
-                    text-shadow: 3px 3px 0 #000, 5px 5px 0 #ffd700;
+                    overflow: hidden;
                 }
 
-                .king-word {
-                    display: block;
+                .drip-word::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: var(--drip-gold);
+                    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
                 }
 
-                .king-subtitle {
-                    color: #f1f1f1;
+                .drip-word:nth-child(1) {
+                    animation: slideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.8s forwards;
+                }
+
+                .drip-word:nth-child(2) {
+                    animation: slideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 1s forwards;
+                }
+
+                .drip-word:nth-child(3) {
+                    font-style: italic;
                     font-weight: 300;
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    font-size: 1.2rem;
-                    margin: 20px auto 40px;
-                    line-height: 1.6;
-                    position: relative;
-                    z-index: 2;
-                    text-shadow: 1px 1px 2px #000;
+                    color: var(--drip-gold);
+                    animation: slideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 1.2s forwards;
                 }
 
-                .king-subtitle strong {
-                    color: #ffd700;
-                    font-weight: 700;
+                /* Subtitle */
+                .drip-subtitle {
+
+                    font-size: clamp(1rem, 1.8vw, 1.3rem);
+                    color: var(--drip-diamond);
+                    max-width: 700px;
+                    margin: 0 auto 4rem;
+                    line-height: 1.8;
+                    letter-spacing: 0.5px;
+                    font-weight: 300;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: slideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 1.5s forwards;
                 }
 
-                /* === BUTTONS - GOLD & BLACK === */
-                .king-cta {
+                .drip-subtitle strong {
+                    color: var(--drip-gold);
+                    font-weight: 500;
+                    letter-spacing: 0.8px;
+                }
+
+                /* CTA Buttons */
+                .drip-cta {
                     display: flex;
-                    gap: 15px;
                     justify-content: center;
-                    z-index: 2;
-                    position: relative;
+                    gap: 2rem;
+                    flex-wrap: wrap;
+                    opacity: 0;
+                    animation: fadeIn 1.5s cubic-bezier(0.19, 1, 0.22, 1) 2s forwards;
                 }
 
-                .king-btn {
-                    background: #ffd700;
-                    color: #000;
+                .drip-btn {
+                    padding: 1.2rem 3rem;
+
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
                     border: none;
-                    padding: 15px 30px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-size: 0.9rem;
                     cursor: pointer;
-                    transition: all 0.3s ease;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    text-decoration: none;
+                    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    position: relative;
+                    overflow: hidden;
                 }
 
-                .king-btn:hover {
-                    background: #000;
-                    color: #ffd700;
-                    outline: 1px solid #ffd700;
-                    transform: translateY(-3px);
+                .drip-btn-primary {
+                    background: var(--drip-gold);
+                    color: var(--drip-black);
+                    border: 1px solid var(--drip-gold);
                 }
 
-                .king-btn-secondary {
+                .drip-btn-secondary {
                     background: transparent;
-                    color: #ffd700;
-                    border: 1px solid #ffd700;
-                    padding: 15px 30px;
-                    font-weight: 700;
-                    text-transform: uppercase;
+                    color: var(--drip-gold);
+                    border: 1px solid var(--drip-gold);
+                }
+
+                .drip-btn:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+                }
+
+                .drip-btn:hover::after {
+                    width: 100%;
+                }
+
+                .drip-arrow {
+                    margin-left: 0.8rem;
+                    display: inline-block;
+                    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+
+                .drip-btn:hover .drip-arrow {
+                    transform: translateX(8px);
+                }
+
+                /* Scroll Indicator */
+                .drip-scroll-hint {
+                    position: absolute;
+                    bottom: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: rgba(212, 175, 55, 0.7);
+
+                    font-size: 0.8rem;
                     letter-spacing: 2px;
-                    font-size: 0.9rem;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    text-decoration: none;
+                    text-transform: uppercase;
+                    opacity: 0;
+                    animation: fadeIn 1.5s ease-out 2.5s forwards;
                 }
 
-                .king-btn-secondary:hover {
-                    background: #ffd700;
-                    color: #000;
+                .drip-scroll-line {
+                    height: 40px;
+                    width: 1px;
+                    background: var(--drip-gold);
+                    margin: 10px auto 0;
+                    animation: scrollLine 2.5s infinite 2.5s;
                 }
 
-                .king-arrow {
-                    font-weight: 700;
-                    font-size: 1.2rem;
+                /* Animations */
+                @keyframes fadeIn {
+                    to {
+                        opacity: 1;
+                    }
                 }
 
-                /* === MOBILE RESPONSIVE === */
-                @media (max-width: 768px) {
-                    .king-headline {
-                        font-size: 3rem;
+                @keyframes slideUp {
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes sparklePulse {
+                    0% {
+                        transform: translate(-50%, -50%) scale(0);
+                        opacity: 0;
                     }
 
-                    .king-cta {
-                        flex-direction: column;
-                        align-items: center;
+                    50% {
+                        transform: translate(-50%, -50%) scale(1.2);
+                        opacity: 0.6;
+                    }
+
+                    100% {
+                        transform: translate(-50%, -50%) scale(0);
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes scrollLine {
+                    0% {
+                        transform: scaleY(0);
+                        transform-origin: top;
+                    }
+
+                    50% {
+                        transform: scaleY(1);
+                        transform-origin: top;
+                    }
+
+                    51% {
+                        transform-origin: bottom;
+                    }
+
+                    100% {
+                        transform: scaleY(0);
+                        transform-origin: bottom;
+                    }
+                }
+
+                /* Floating Gold Particles */
+                .drip-hero::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+
+                    animation: floatParticles 120s linear infinite;
+                    z-index: 1;
+                    opacity: 0.3;
+                }
+
+                @keyframes floatParticles {
+                    0% {
+                        transform: translateY(0) translateX(0);
+                    }
+
+                    25% {
+                        transform: translateY(-20px) translateX(10px);
+                    }
+
+                    50% {
+                        transform: translateY(0) translateX(20px);
+                    }
+
+                    75% {
+                        transform: translateY(20px) translateX(10px);
+                    }
+
+                    100% {
+                        transform: translateY(0) translateX(0);
                     }
                 }
             </style>
+            <script>
+                // Load required fonts
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Add Josefin Sans font
+                    const fontLink = document.createElement('link');
+                    fontLink.href = 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap';
+                    fontLink.rel = 'stylesheet';
+                    document.head.appendChild(fontLink);
 
-            <!-- Add more items as needed -->
+                    // Force animation restart (helps if animations don't trigger initially)
+                    const headline = document.querySelector('.drip-headline');
+                    void headline.offsetWidth; // Trigger reflow
+                });
+            </script>
+
+
+
 
 
 

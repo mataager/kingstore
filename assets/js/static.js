@@ -21,7 +21,7 @@ const vanishedstock = false;
 const GuestEmail = "exampleguest999@gmail.com";
 //images url
 const pannerurl =
-  "https://mir-s3-cdn-cf.behance.net/project_modules/1400/286b4c145499225.629f80eb836f1.jpg";
+  "https://images.unsplash.com/photo-1731983061288-a851eb9c9cb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 //
 const newarrivalurl =
   "https://i.pinimg.com/736x/b1/d4/8d/b1d48d61bba0158e8c57500f7be1f1de.jpg";
