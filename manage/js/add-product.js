@@ -834,12 +834,7 @@ async function handleFileSelect(event, dropZone) {
 
   try {
     // Upload to Bunny CDN
-    const result = await uploadToBunny(file, {
-      accessKey: accessKey,
-      storageZoneName: storageZoneName,
-      storetitle: storetitle,
-      pullZone: pullZone,
-    });
+    const result = await uploadToCloudinary(file, uploadPreset, cloudName);
 
     // Success handling
     preloader.remove();
