@@ -1,3 +1,4 @@
+//v3
 function emailPasswordSignIn() {
   const body = document.body;
   const modal = document.getElementById("signinmodal");
@@ -6,13 +7,14 @@ function emailPasswordSignIn() {
   // Set the modal content with both forms (initially hidden)
   modalContent.innerHTML = `
     <div class="guestmodalarea">
-    <div class="flex center flex-end guest-modal-close-btn-7a3b" onclick="closeModal()">
-    <button type="button" class="Add-to-Cart" id="perv4Button">
-        <i class="bi bi-x-lg"></i>
+    <div class="flex center flex-end guest-modal-close-btn-7a3b" onclick="closesigningModal()">
+    <button type="button" class="modalbtnL" id="perv4Button">
+        <i class="bi bi-x"></i>
     </button>
     </div>
       <!-- Sign In Form -->
       <div id="signin-form" class="form-container active">
+      <div class="width-available flex center mb-20"><img class="animate-on-scroll-auto show fle" width="50px" src="./assets/images/matager-bag.svg"></div>
         <h2>Sign in for better experience</h2>
         <div class="mt-30 mb-30 signinupinbutarea04392">
           <input type="email" id="email" class="swal2-input" placeholder="Enter your email">
@@ -20,12 +22,13 @@ function emailPasswordSignIn() {
           <div id="signin-error" class="error-hint"></div>
           <button id="continueGuest" class="modal-btn signinupbtn04392">Sign in</button>
           <div id="signin-preloader" class="preloader" style="display: none;"> <div class="loader"></div></div>
-          <p style="margin-top: 40px;">Don't have an account? <a href="#" id="signup-link" class="mt-10">Sign up here</a></p>
+          <p style="margin-top: 40px;" class="signup-link-container ">Don't have an account? <a href="#" id="signup-link" class="mt-10 pb-5">Sign up here</a></p>
         </div>
       </div>
 
       <!-- Sign Up Form -->
       <div id="signup-form" class="form-container">
+      <div class="width-available flex center mb-20"><img class="animate-on-scroll-auto show fle" width="50px" src="./assets/images/matager-bag.svg"></div>
         <div class="progress-container">
           <div class="progress-bar">
             <div class="progress-step-sign" id="step1" data-step="1">Basic Info</div>
@@ -69,7 +72,7 @@ function emailPasswordSignIn() {
               <button id="back-to-step1" class="modal-btn back-btn"><i class="bi bi-arrow-left"></i></button>
               <button id="next-to-step3" class="modal-btn signinupbtn04392">Next</button>
             </div>
-            <p class="">Already have an account? <a href="#" id="signin-link" class="mt-10">Sign in here</a></p>
+            <p class="mt-30">Already have an account? <a href="#" id="signin-link" class="mt-10">Sign in here</a></p>
           </div>
         </div>
 
@@ -77,7 +80,7 @@ function emailPasswordSignIn() {
         <div id="signup-step3" class="signup-step">
           <h2>Additional Information</h2>
           <div class="mt-30 mb-30 signinupinbutarea04392">
-           <select id="governorate" class="swal2-input select-governorate width-available" required>
+            <select id="governorate" class="swal2-input select-governorate width-available" required>
   <option value="" disabled selected>Select your governorate</option>
   <option value="Alexandria">Alexandria</option>
   <option value="Aswan">Aswan</option>
@@ -117,7 +120,7 @@ function emailPasswordSignIn() {
               <button id="signup-btn" class="modal-btn signinupbtn04392">Complete Sign Up</button>
             </div>
             <div id="signup-preloader" class="preloader" style="display: none;"> <div class="loader"></div></div>
-             <p class="">Already have an account? <a href="#" id="signin-link" class="mt-10">Sign in here</a></p>
+             <p class="mt-30">Already have an account? <a href="#" id="signin-link" class="mt-10">Sign in here</a></p>
           </div>
         </div>
         <div id="signup-success" style="display: none; text-align: center;">
@@ -405,7 +408,7 @@ function emailPasswordSignIn() {
     if (/[^A-Za-z0-9]/.test(password)) strength += 1;
 
     // Update UI
-    const colors = ["#ff4d4d", "#ff9999", "#66b3ff", "#4dff4d", "#00cc00"];
+    const colors = ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"];
     const texts = ["Very Weak", "Weak", "Moderate", "Strong", "Very Strong"];
 
     strengthFill.style.width = `${(strength / 4) * 100}%`;
@@ -460,11 +463,6 @@ function emailPasswordSignIn() {
     clearAllErrors();
   }
 
-  function closeModal() {
-    body.classList.remove("modal-open");
-    modal.classList.remove("show");
-  }
-
   function handleSignIn() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -511,12 +509,10 @@ function emailPasswordSignIn() {
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Hide the modal on success
-        closeModal();
+        closesigningModal();
 
         // Show success message
         Swal.fire({
-          toast: true,
-          position: "top-end",
           icon: "success",
           title: `Signed In Successfully\nWelcome, ${userCredential.user.email}`,
           showConfirmButton: false,
@@ -771,13 +767,10 @@ function emailPasswordSignIn() {
     }
   });
 }
-function closeModal() {
-  // Close the guest modal by removing 'show' class
-  const guestModal = document.getElementById("signinmodal");
-  if (guestModal) {
-    guestModal.classList.remove("show");
-  }
 
-  // Remove 'modal-open' class from body
-  document.body.classList.remove("modal-open");
+function closesigningModal() {
+  const body = document.body;
+  const modal = document.getElementById("signinmodal");
+  modal.classList.remove("show");
+  body.classList.remove("modal-open");
 }

@@ -265,7 +265,7 @@ renderMegaMenu();
 const brandsData = [
   {
     name: "Nike",
-    logo: "https://cdn.worldvectorlogo.com/logos/nike-11.svg",
+    logo: "https://www.svgrepo.com/show/303173/nike-3-logo.svg",
   },
   {
     name: "Adidas",

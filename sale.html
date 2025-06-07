@@ -37,10 +37,14 @@
         <div class="overlay" data-overlay=""></div>
 
 
-        <a href="./index.html" class="logo store-name ">
-            King Store
-        </a>
+        <a href="./index.html" class="logo" style="
+            font-weight: 100;
+            font-size: x-large;
+            color: white;
+        ">
+            <span class="drip-word">KINGS</span>
 
+        </a>
 
         <button class="nav-open-btn" data-nav-open-btn="" aria-label="Open Menu">
             <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
@@ -53,9 +57,7 @@
             </button>
 
             <a href="#" class="logo bg-white">
-                <a href="./index.html" class="logo store-name ">
-                    King Store
-                </a>
+                <img src="./assets/images/iicon.svg" width="190" height="50" alt="">
             </a>
 
             <ul class="navbar-list">
@@ -64,10 +66,11 @@
                     <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Home</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Shop</a>
+                    <a href="#" class="navbar-link" onclick="changeFrameSrc('Products.html')">Products</a>
                 </li>
 
                 <!-- /mega menus & brands menu/ -->
+
                 <li class="navbar-item" id="megamenu" data-mega-menu>
                     <div class="flex align-items justify-content-space-between">
                         <a href="#" class="navbar-link" onclick="changeFrameSrc('Products.html')">Products</a>
@@ -137,7 +140,25 @@
     </div>
 </header>
 <article>
+    <div class="sale-animation-bar ">
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
+        <span class="sale-animation-txt">SALE</span>
 
+
+        <!-- Duplicate for continuous effect -->
+    </div>
 
     <section class="section product">
         <div class="container pt-10">
@@ -146,6 +167,7 @@
                     <h5 class="grey pointer" onclick="changeFrameSrc('index.html')">Home </h5>
                     /
                     <h5>Sale</h5>
+                    <p class="itemscounter" id="itemscounter"></p>
                 </div>
 
                 <div class="filter-container flex center">
@@ -214,7 +236,8 @@
 </script>
 
 </main>
-<footer class="footer">
+<footer class="footer animate-on-scroll">
+
     <div class="footer-top section">
         <div class="container">
 
@@ -262,45 +285,50 @@
 
                 <ul class="footer-list">
 
-                    <li>
+                    <li class="animate-on-scroll">
                         <p class="footer-list-title">Contact Us</p>
                     </li>
 
+                    <li class="animate-on-scroll">
+                        <address class="footer-link hidden">
+                            <ion-icon name="location" role="img" class="md hydrated" aria-label="location"></ion-icon>
 
-                    <li>
+                            <span class="footer-link-text">
+                                type any addrress
+                            </span>
+                        </address>
+                    </li>
+
+                    <li class="animate-on-scroll">
                         <a href="tel:" id="store-call" class="footer-link">
                             <ion-icon name="call" role="img" class="md hydrated" aria-label="call"></ion-icon>
                             <span id="store-number" class="footer-link-text"></span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="animate-on-scroll">
                         <a href="mailto:" id="store-email-link" class="footer-link">
                             <ion-icon name="mail" role="img" class="md hydrated" aria-label="mail"></ion-icon>
                             <span id="store-email" class="footer-link-text"></span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="animate-on-scroll">
                         <a href="#" class="footer-link" id="report-bug-btn">
                             <ion-icon name="bug"></ion-icon>
                             <span class="footer-link-text">Report a problem or a bug</span>
                         </a>
                     </li>
-
                 </ul>
-
-
-
                 <div class="footer-list">
 
-                    <p class="footer-list-title">Newsletter</p>
+                    <p class="footer-list-title animate-on-scroll">Newsletter</p>
 
-                    <p class="newsletter-text">
+                    <p class="newsletter-text animate-on-scroll">
                         Send us your email to keeping up with our latest updates..
                     </p>
 
-                    <form action="" class="newsletter-form">
+                    <form action="" class="newsletter-form animate-on-scroll">
                         <input type="email" name="email" required="" placeholder="Email Address"
                             class="newsletter-input">
 
@@ -308,8 +336,9 @@
                     </form>
 
                 </div>
-                <ul class="footer-list">
-                    <p class="footer-list-title">Matager</p>
+
+                <ul class="footer-list animate-on-scroll">
+                    <p class="footer-list-title animate-on-scroll">Matager</p>
                     <li>
                         <a href="https://matager.online/PrivacyPolicy.html" class="footer-link">
                             <span class="footer-link-text">privacy policy</span>
@@ -331,6 +360,9 @@
             <img src="./assets/images/powerd by matager black.svg" width="100px">
         </a>
     </div>
+
+
+
 </footer>
 
 
@@ -351,7 +383,9 @@
 <script src="./assets/js/update-cart-amont.js"></script>
 <script src="./assets/js/report.js"></script>
 <script src="./assets/js/all.js"></script>
+<script src="./assets/js/buynow.js"></script>
 <script src="./assets/js/rendering-megamenu.js"></script>
 <script src="./assets/js/rendering-search.js"></script>
 <script src="./assets/js/rendering-sidebar.js"></script>
 <script src="./assets/js/addfavouriteproduct.js"></script>
+<script src="./assets/js/check-store-status.js"></script>

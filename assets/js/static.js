@@ -11,17 +11,23 @@ const storeGender = ["Men"];
 const productnavbar = ["no"];
 const brandsnavbar = ["no"];
 const storeType = "clothing"; // clothing or footwear
-const freeshipping = "2000";
-const minshipping = 65;
+//shipping config
+const maincities = ["Cairo", "Giza", "Alexandria"];
+const freeshipping = "3000";
+const minshipping = 60;
 const maxshipping = 90;
 const specialshipping = 75;
 const vanishedstock = false;
+const outofstock = true;
+const flippedimages = false;
+const autopricehandle = true;
+const codfees = 10;
 
 // guest checkout
 const GuestEmail = "kingstoreguest@gmail.com";
 //images url
 const pannerurl =
-  "https://images.unsplash.com/photo-1731983061288-a851eb9c9cb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  "https://mir-s3-cdn-cf.behance.net/project_modules/1400/e40a7f68437969.5b5cf6dccdce0.jpg";
 //
 const newarrivalurl =
   "https://i.pinimg.com/736x/b1/d4/8d/b1d48d61bba0158e8c57500f7be1f1de.jpg";

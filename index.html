@@ -43,10 +43,14 @@
             <div class="overlay" data-overlay=""></div>
 
 
-            <a href="./index.html" class="logo store-name ">
-                King Store
-            </a>
+            <a href="./index.html" class="logo" style="
+                font-weight: 100;
+                font-size: x-large;
+                color: white;
+            ">
+                <span class="drip-word">KINGS</span>
 
+            </a>
 
             <button class="nav-open-btn" data-nav-open-btn="" aria-label="Open Menu">
                 <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
@@ -59,9 +63,7 @@
                 </button>
 
                 <a href="#" class="logo bg-white">
-                    <a href="./index.html" class="logo store-name ">
-                        King Store
-                    </a>
+                    <img src="./assets/images/iicon.svg" width="190" height="50" alt="">
                 </a>
 
                 <ul class="navbar-list">
@@ -70,10 +72,11 @@
                         <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Home</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="navbar-link" onclick="changeFrameSrc('index.html')">Shop</a>
+                        <a href="#" class="navbar-link" onclick="changeFrameSrc('Products.html')">Products</a>
                     </li>
 
                     <!-- /mega menus & brands menu/ -->
+
                     <li class="navbar-item" id="megamenu" data-mega-menu>
                         <div class="flex align-items justify-content-space-between">
                             <a href="#" class="navbar-link" onclick="changeFrameSrc('Products.html')">Products</a>
@@ -148,11 +151,8 @@
             <div class="loader"></div>
         </div>
         <article id="mainpage">
-
-
-
-
-            <section class="drip-hero" id="panner-img">
+            <section class="drip-hero" id="panner-img"
+                style="background-image: url(&quot;https://images.unsplash.com/photo-1731983061288-a851eb9c9cb7?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);">
                 <div class="drip-pattern"></div>
 
                 <div class="container">
@@ -524,27 +524,24 @@
                     }
                 }
             </style>
-            <script>
-                // Load required fonts
-                document.addEventListener('DOMContentLoaded', function () {
-                    // Add Josefin Sans font
-                    const fontLink = document.createElement('link');
-                    fontLink.href = 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap';
-                    fontLink.rel = 'stylesheet';
-                    document.head.appendChild(fontLink);
-
-                    // Force animation restart (helps if animations don't trigger initially)
-                    const headline = document.querySelector('.drip-headline');
-                    void headline.offsetWidth; // Trigger reflow
-                });
-            </script>
 
 
 
 
+            <section class="section product animate-on-scroll" id="BestSellersSection">
+                <div class="container">
+
+                    <h2 class="h2 section-title mb-40">BESTSELLERS</h2>
 
 
 
+                    <ul class="BestSellers">
+
+
+
+                    </ul>
+                </div>
+            </section>
 
             <section class="section product animate-on-scroll">
                 <div class="container">
@@ -746,7 +743,22 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="footer-list">
 
+                        <p class="footer-list-title animate-on-scroll">Newsletter</p>
+
+                        <p class="newsletter-text animate-on-scroll">
+                            Send us your email to keeping up with our latest updates..
+                        </p>
+
+                        <form action="" class="newsletter-form animate-on-scroll">
+                            <input type="email" name="email" required="" placeholder="Email Address"
+                                class="newsletter-input">
+
+                            <button type="submit" class="btn2 btn-primary">Subscribe</button>
+                        </form>
+
+                    </div>
 
                     <ul class="footer-list animate-on-scroll">
                         <p class="footer-list-title animate-on-scroll">Matager</p>
@@ -787,11 +799,13 @@
     <script src="./assets/js/update-cart-amont.js"></script>
     <script src="./assets/js/route.js"></script>
     <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/buynow.js"></script>
     <script src="./assets/js/rendering-megamenu.js"></script>
     <script src="./assets/js/rendering-collections.js"></script>
     <script src="./assets/js/rendering-search.js"></script>
     <script src="./assets/js/addfavouriteproduct.js"></script>
     <script defer src="./assets/js/animation.js"></script>
+    <script src="./assets/js/check-store-status.js"></script>
 </body>
 
 </html>
