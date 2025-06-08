@@ -749,129 +749,72 @@ function setupFileInputHandlers(count) {
   );
 }
 
-// async function handleFileSelect(event, dropZone) {
-//   const file = event.target.files[0];
-//   const formData = new FormData();
-//   formData.append("image", file);
-
-//   const preloader = document.createElement("div");
-//   preloader.classList.add("uploadloader");
-//   dropZone.appendChild(preloader);
-
-//   // Remove any existing upload status elements
-//   const existingUploadStatus =
-//     dropZone.parentElement.querySelector(".upload-status");
-//   if (existingUploadStatus) {
-//     existingUploadStatus.remove();
-//   }
-
-//   const dropZoneId = dropZone.id;
-//   const count = dropZoneId.split("_").pop(); // Extract the count from the drop zone ID
-
-//   try {
-//     // choose by the 2 ways
-//     // const result = await imgurUpload(clientId, formData);
-//     const result = await uploadToCloudinary(file, uploadPreset, cloudName);
-
-//     preloader.remove();
-
-//     const imageUrl = result.data?.link;
-//     const uploadStatus = document.createElement("div");
-//     uploadStatus.classList.add("upload-status", "upload-ico");
-
-//     if (result.success) {
-//       const imgElement = document.createElement("img");
-//       imgElement.src = imageUrl;
-//       dropZone.innerHTML = "";
-//       dropZone.appendChild(imgElement);
-
-//       // Extract the dropZone number and use it for setting the corresponding img
-//       const dropZoneNumber = dropZoneId.match(/\d+/)[0]; // Extract the number from dropZoneId
-
-//       // Check if the dropZoneNumber is within the range 1-6
-//       if (dropZoneNumber >= 1 && dropZoneNumber <= 6) {
-//         document.getElementById(`img${dropZoneNumber}_${count}`).value =
-//           imageUrl;
-//       }
-
-//       if (uploadStatus) {
-//         uploadStatus.innerHTML = `<p><i class="bi bi-cloud-check"></i></p>`;
-//       }
-//     } else {
-//       if (uploadStatus) {
-//         uploadStatus.innerHTML = `<p><i class="bi bi-cloud-slash red-check"></i></p><p class="hidden">${result.data.error}</p>`;
-//       }
-//     }
-
-//     // Append upload status to the parent of the drop zone
-//     dropZone.parentElement.appendChild(uploadStatus);
-//   } catch (error) {
-//     preloader.remove();
-//     const uploadStatus = document.createElement("div");
-//     uploadStatus.classList.add("upload-status");
-//     uploadStatus.innerHTML = `<p><i class="bi bi-cloud-slash red-check"></i></p><p class="hidden">${error.message}</p>`;
-//     dropZone.parentElement.appendChild(uploadStatus);
-//   }
-// }
-
 async function handleFileSelect(event, dropZone) {
   const file = event.target.files[0];
-  if (!file) return;
+  const formData = new FormData();
+  formData.append("image", file);
 
-  // Create and show preloader
   const preloader = document.createElement("div");
   preloader.classList.add("uploadloader");
-  dropZone.innerHTML = "";
   dropZone.appendChild(preloader);
 
-  // Remove any existing upload status
+  // Remove any existing upload status elements
   const existingUploadStatus =
     dropZone.parentElement.querySelector(".upload-status");
-  if (existingUploadStatus) existingUploadStatus.remove();
+  if (existingUploadStatus) {
+    existingUploadStatus.remove();
+  }
 
   const dropZoneId = dropZone.id;
-  const count = dropZoneId.split("_").pop();
+  const count = dropZoneId.split("_").pop(); // Extract the count from the drop zone ID
 
   try {
-    // Upload to Bunny CDN
+    // choose by the 2 ways
+    // const result = await imgurUpload(clientId, formData);
     const result = await uploadToCloudinary(file, uploadPreset, cloudName);
 
-    // Success handling
     preloader.remove();
 
-    const imgElement = document.createElement("img");
-    imgElement.src = result.url;
-    dropZone.innerHTML = "";
-    dropZone.appendChild(imgElement);
-
-    // Update hidden input
-    const dropZoneNumber = dropZoneId.match(/\d+/)[0];
-    if (dropZoneNumber >= 1 && dropZoneNumber <= 6) {
-      document.getElementById(`img${dropZoneNumber}_${count}`).value =
-        result.url;
-    }
-
-    // Add success status
+    const imageUrl = result.data?.link;
     const uploadStatus = document.createElement("div");
     uploadStatus.classList.add("upload-status", "upload-ico");
-    uploadStatus.innerHTML = `<p><i class="bi bi-cloud-check"></i></p>`;
+
+    if (result.success) {
+      const imgElement = document.createElement("img");
+      imgElement.src = imageUrl;
+      dropZone.innerHTML = "";
+      dropZone.appendChild(imgElement);
+
+      // Extract the dropZone number and use it for setting the corresponding img
+      const dropZoneNumber = dropZoneId.match(/\d+/)[0]; // Extract the number from dropZoneId
+
+      // Check if the dropZoneNumber is within the range 1-6
+      if (dropZoneNumber >= 1 && dropZoneNumber <= 6) {
+        document.getElementById(`img${dropZoneNumber}_${count}`).value =
+          imageUrl;
+      }
+
+      if (uploadStatus) {
+        uploadStatus.innerHTML = `<p><i class="bi bi-cloud-check"></i></p>`;
+      }
+    } else {
+      if (uploadStatus) {
+        uploadStatus.innerHTML = `<p><i class="bi bi-cloud-slash red-check"></i></p><p class="hidden">${result.data.error}</p>`;
+      }
+    }
+
+    // Append upload status to the parent of the drop zone
     dropZone.parentElement.appendChild(uploadStatus);
   } catch (error) {
-    console.error("Upload error:", error);
     preloader.remove();
-
-    // Error handling
-    dropZone.innerHTML = `<div class="drop-zone__prompt">Drop file here or click to upload</div>`;
-
     const uploadStatus = document.createElement("div");
     uploadStatus.classList.add("upload-status");
-    uploadStatus.innerHTML = `
-      <p><i class="bi bi-cloud-slash red-check"></i></p>
-      <p class="hidden">${error.message.replace("Upload failed: ", "")}</p>
-    `;
+    uploadStatus.innerHTML = `<p><i class="bi bi-cloud-slash red-check"></i></p><p class="hidden">${error.message}</p>`;
     dropZone.parentElement.appendChild(uploadStatus);
   }
 }
+
+
 
 function handleDragOver(event, dropZone) {
   event.preventDefault();
