@@ -4483,6 +4483,7 @@ a {
   transition: max-height 0.8s ease;
   font-weight: 200;
   font-size: small;
+  color: aliceblue;
 }
 
 .detailscollapsible.open {
